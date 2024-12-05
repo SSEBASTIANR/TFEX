@@ -121,3 +121,17 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "../Users/JUANSE/Documents/PROYECTOS/PROJECTS/VSCODE/TFEEXPRES/frontend"),  # Cambia "nombre_proyecto" por el nombre real de tu proyecto
+]
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'frontend/dist',  # Ajusta la ruta si es necesario
+]

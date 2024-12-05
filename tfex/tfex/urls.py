@@ -16,7 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.shortcuts import render
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+]
+
+def index(request):
+    return render(request, 'index.html')  # Asegúrate de que este sea el archivo correcto
+
+urlpatterns = [
+    path('', index, name='home'),  # Ruta principal de tu página de inicio
 ]
